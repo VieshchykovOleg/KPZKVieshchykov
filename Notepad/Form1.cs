@@ -13,13 +13,26 @@ namespace Notepad
         private FileManager _fileManager;
         private TextEditor _textEditor;
         private TextFormatter _textFormatter;
-
+        private AppearanceManager _appearanceManager;
         public Form1()
         {
             InitializeComponent();
-            _fileManager = new FileManager(richTextBox1);
-            _textEditor = new TextEditor(richTextBox1);
-            _textFormatter = new TextFormatter(richTextBox1, menuStrip1);
+            InitializeManagers();
+        }
+
+        private void InitializeManagers()
+        {
+            if (richTextBox1 != null && menuStrip1 != null)
+            {
+                _fileManager = new FileManager(richTextBox1);
+                _textEditor = new TextEditor(richTextBox1);
+                _textFormatter = new TextFormatter(richTextBox1, menuStrip1);
+                _appearanceManager = new AppearanceManager(richTextBox1);
+            }
+            else
+            {
+                MessageBox.Show("Initialization failed: Controls are not initialized properly.");
+            }
         }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -167,6 +180,38 @@ namespace Notepad
         private void DisableWordWrapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _textFormatter.DisableWordWrap();
+        }
+        // Використання класу Appearance
+        private void ZoonInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void StatusLineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Enablestatus_barToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _appearanceManager.ShowStatusBar(this, panel1);
+        }
+
+        private void Disablestatus_barToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _appearanceManager.HideStatusBar(panel1);
+        }
+
+        private void ZoomInToolStripMenuItem2_Click(object sender, EventArgs e)
+        {       
+            _appearanceManager.IncreaseZoom();
+        }
+        private void ZoomOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _appearanceManager.DecreaseZoom();
+        }
+
+        private void RestoreZoomToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            _appearanceManager.RestoreZoom();
         }
     }
 }

@@ -325,7 +325,7 @@
             маштабToolStripMenuItem.Name = "маштабToolStripMenuItem";
             маштабToolStripMenuItem.Size = new Size(224, 26);
             маштабToolStripMenuItem.Text = "Маштаб";
-            маштабToolStripMenuItem.Click += маштабToolStripMenuItem_Click;
+            маштабToolStripMenuItem.Click += ZoonInToolStripMenuItem_Click;
             // 
             // включитьToolStripMenuItem2
             // 
@@ -354,7 +354,7 @@
             рядокСтануToolStripMenuItem.Name = "рядокСтануToolStripMenuItem";
             рядокСтануToolStripMenuItem.Size = new Size(224, 26);
             рядокСтануToolStripMenuItem.Text = "Рядок стану";
-            рядокСтануToolStripMenuItem.Click += рядокСтануToolStripMenuItem_Click;
+            рядокСтануToolStripMenuItem.Click += StatusLineToolStripMenuItem_Click;
             // 
             // включитьToolStripMenuItem1
             // 
