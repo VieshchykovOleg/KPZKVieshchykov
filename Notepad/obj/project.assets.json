@@ -1,11 +1,33 @@
 {
   "version": 3,
   "targets": {
-    "net7.0-windows7.0": {}
+    "net7.0-windows7.0": {
+      "NotepadLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/NotepadLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NotepadLibrary.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NotepadLibrary/1.0.0": {
+      "type": "project",
+      "path": "../NotepadLibrary/NotepadLibrary.csproj",
+      "msbuildProject": "../NotepadLibrary/NotepadLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0-windows7.0": []
+    "net7.0-windows7.0": [
+      "NotepadLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\oleg\\.nuget\\packages\\": {},
@@ -39,7 +61,11 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj": {
+              "projectPath": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
