@@ -1,0 +1,8 @@
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.csproj.AssemblyReference.cache
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Cyrsov.Form1.resources
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.csproj.GenerateResource.cache
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.GeneratedMSBuildEditorConfig.editorconfig
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.AssemblyInfoInputs.cache
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.AssemblyInfo.cs
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.csproj.CoreCompileInputs.cache
+E:\2_cyrs\2semestr\Lab06\Note\Notepad\Notepad\obj\Debug\net7.0-windows\Notepad.Form1.resources
