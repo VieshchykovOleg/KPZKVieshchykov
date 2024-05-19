@@ -12,15 +12,15 @@ namespace Notepad
     {
         private FileManager _fileManager;
         private TextEditor _textEditor;
-
+        private TextFormatter _textFormatter;
 
         public Form1()
         {
             InitializeComponent();
             _fileManager = new FileManager(richTextBox1);
             _textEditor = new TextEditor(richTextBox1);
+            _textFormatter = new TextFormatter(richTextBox1, menuStrip1);
         }
-
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             string text = richTextBox1.Text;
@@ -132,6 +132,41 @@ namespace Notepad
         private void DateTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _textEditor.InsertDateTime();
+        }
+        // Використання класу Format
+        private void InsertDateTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textEditor.InsertDateTime();
+        }
+
+        private void GoToToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void FontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textFormatter.SetFont();
+        }
+
+        private void LightThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textFormatter.SetLightTheme();
+        }
+
+        private void DarkThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textFormatter.SetDarkTheme();
+        }
+
+        private void EnableWordWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textFormatter.EnableWordWrap();
+        }
+
+        private void DisableWordWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _textFormatter.DisableWordWrap();
         }
     }
 }
