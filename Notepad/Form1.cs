@@ -15,7 +15,12 @@ namespace Notepad
         {
             InitializeComponent();
         }
-
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string text = richTextBox1.Text;
+            string[] lines = text.Split('\n');
+            Tekst.Text = text.Length.ToString();
+            Simvol.Text = lines.Length.ToString();
+        }
     }
 }
-
