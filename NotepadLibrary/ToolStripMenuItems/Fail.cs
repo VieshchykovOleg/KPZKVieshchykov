@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 
-namespace NotepadLibrary
+namespace NotepadLibrary.ToolStripMenuItems
 {
     public class FileManager
     {

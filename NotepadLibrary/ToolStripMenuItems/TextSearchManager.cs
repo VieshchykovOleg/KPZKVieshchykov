@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
-namespace NotepadLibrary
+namespace NotepadLibrary.ToolStripMenuItems
 {
     public class TextSearchManager
     {

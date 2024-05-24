@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NotepadLibrary
+namespace NotepadLibrary.ToolStripMenuItems
 {
     public class TextFormatter
     {

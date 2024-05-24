@@ -4,8 +4,9 @@ using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Diagnostics;
 using Microsoft.SqlServer.Server;
-using NotepadLibrary;
 using NotepadLibrary.AutoSaveObserver;
+using NotepadLibrary.ToolStripMenuItems;
+using NotepadLibrary.About;
 
 namespace Notepad
 {
@@ -240,7 +241,7 @@ namespace Notepad
         {
             if (_autoSaveManager != null)
             {
-                _autoSaveManager.Initialize(richTextBox1);
+                _autoSaveManager.InitializeAutoSave(richTextBox1);
             }
             else
             {
@@ -252,7 +253,7 @@ namespace Notepad
         {
             if (_autoSaveManager != null)
             {
-                _autoSaveManager.StopAutoSave();
+                _autoSaveManager.DisableAutoSave();
             }
             else
             {
@@ -262,17 +263,21 @@ namespace Notepad
 
         private void RecoverToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_autoSaveManager != null && File.Exists(_autoSaveManager.AutoSavePath))
+            if (_autoSaveManager != null)
             {
-                richTextBox1.Text = File.ReadAllText(_autoSaveManager.AutoSavePath);
-            }
-            else if (_autoSaveManager == null)
-            {
-                MessageBox.Show("AutoSaveManager is not initialized.");
+                string autoSavedText = _autoSaveManager.RecoverAutoSavedText();
+                if (autoSavedText != null)
+                {
+                    richTextBox1.Text = autoSavedText;
+                }
+                else
+                {
+                    MessageBox.Show("No autosave file found.");
+                }
             }
             else
             {
-                MessageBox.Show("No autosave file found.");
+                MessageBox.Show("AutoSaveManager is not initialized.");
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace NotepadLibrary
+namespace NotepadLibrary.About
 {
     public class Certificate
     {
