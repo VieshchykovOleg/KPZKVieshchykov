@@ -14,11 +14,19 @@ namespace Notepad
         private TextEditor _textEditor;
         private TextFormatter _textFormatter;
         private AppearanceManager _appearanceManager;
+        private CommandManager _commandManager;
+        private AutoSaveManager _autoSaveManager;
+
+        private string _previousText;
+
         public Form1()
         {
             InitializeComponent();
             InitializeManagers();
+            _autoSaveManager = AutoSaveManager.Instance;
+            _autoSaveManager.Initialize(richTextBox1); 
         }
+
         private void InitializeManagers()
         {
             if (richTextBox1 != null && menuStrip1 != null)
@@ -27,18 +35,25 @@ namespace Notepad
                 _textEditor = new TextEditor(richTextBox1);
                 _textFormatter = new TextFormatter(richTextBox1, menuStrip1);
                 _appearanceManager = new AppearanceManager(richTextBox1);
+                _commandManager = new CommandManager(richTextBox1);
+
+                AutoSaveManager.Instance.Initialize(richTextBox1);
             }
             else
             {
                 MessageBox.Show("Initialization failed: Controls are not initialized properly.");
             }
         }
+
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             string text = richTextBox1.Text;
             string[] lines = text.Split('\n');
             Tekst.Text = text.Length.ToString();
             Simvol.Text = lines.Length.ToString();
+
+            _commandManager.ExecuteCommand(new TextChangeCommand(richTextBox1, _previousText, text));
+            _previousText = text;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -85,10 +100,11 @@ namespace Notepad
             Form1 newForm = new Form1();
             newForm.Show();
         }
+
         // Використання класу Editing
         private void UndoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _textEditor.Undo();
+            _commandManager.Undo();
         }
 
         private void CutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -160,14 +176,10 @@ namespace Notepad
             _textEditor.InsertDateTime();
         }
         // Використання класу Format
-        private void InsertDateTimeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            _textEditor.InsertDateTime();
-        }
 
         private void GoToToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void FontToolStripMenuItem_Click(object sender, EventArgs e)
@@ -214,7 +226,7 @@ namespace Notepad
         }
 
         private void ZoomInToolStripMenuItem2_Click(object sender, EventArgs e)
-        {       
+        {
             _appearanceManager.IncreaseZoom();
         }
         private void ZoomOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -242,6 +254,46 @@ namespace Notepad
         {
             ForProgram newForm = new ForProgram();
             newForm.Show();
+        }
+
+        private void EnableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_autoSaveManager != null)
+            {
+                _autoSaveManager.Initialize(richTextBox1);
+            }
+            else
+            {
+                MessageBox.Show("AutoSaveManager is not initialized.");
+            }
+        }
+
+        private void DisableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_autoSaveManager != null)
+            {
+                _autoSaveManager.StopAutoSave();
+            }
+            else
+            {
+                MessageBox.Show("AutoSaveManager is not initialized.");
+            }
+        }
+
+        private void RecoverToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_autoSaveManager != null && File.Exists(_autoSaveManager.AutoSavePath))
+            {
+                richTextBox1.Text = File.ReadAllText(_autoSaveManager.AutoSavePath);
+            }
+            else if (_autoSaveManager == null)
+            {
+                MessageBox.Show("AutoSaveManager is not initialized.");
+            }
+            else
+            {
+                MessageBox.Show("No autosave file found.");
+            }
         }
     }
 }

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\Notepad\\Notepad.csproj": {}
+    "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\Notepad\\Notepad.csproj": {}
   },
   "projects": {
-    "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj": {
+    "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\NotepadLibrary\\NotepadLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj",
+        "projectUniqueName": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\NotepadLibrary\\NotepadLibrary.csproj",
         "projectName": "NotepadLibrary",
-        "projectPath": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj",
-        "packagesPath": "C:\\Users\\oleg\\.nuget\\packages\\",
-        "outputPath": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\obj\\",
+        "projectPath": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\NotepadLibrary\\NotepadLibrary.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\NotepadLibrary\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -63,25 +63,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\Notepad\\Notepad.csproj": {
+    "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\Notepad\\Notepad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\Notepad\\Notepad.csproj",
+        "projectUniqueName": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\Notepad\\Notepad.csproj",
         "projectName": "Notepad",
-        "projectPath": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\Notepad\\Notepad.csproj",
-        "packagesPath": "C:\\Users\\oleg\\.nuget\\packages\\",
-        "outputPath": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\Notepad\\obj\\",
+        "projectPath": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\Notepad\\Notepad.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\Notepad\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\oleg\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -89,15 +85,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj": {
-                "projectPath": "E:\\2_cyrs\\2semestr\\Lab06\\Note\\Notepad\\NotepadLibrary\\NotepadLibrary.csproj"
+              "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\NotepadLibrary\\NotepadLibrary.csproj": {
+                "projectPath": "D:\\2 курс\\Конструювання ПЗ\\KPZKVieshchykov\\NotepadLibrary\\NotepadLibrary.csproj"
               }
             }
           }
@@ -106,6 +101,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -130,7 +130,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }
