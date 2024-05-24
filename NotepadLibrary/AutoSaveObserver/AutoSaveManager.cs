@@ -3,7 +3,7 @@ using System.IO;
 using System.Timers;
 using System.Windows.Forms;
 
-namespace NotepadLibrary
+namespace NotepadLibrary.AutoSaveObserver
 {
     public class AutoSaveManager
     {
@@ -33,6 +33,35 @@ namespace NotepadLibrary
         public void StopAutoSave()
         {
             _autoSaveTimer.Stop();
+        }
+
+        public void InitializeAutoSave(RichTextBox richTextBox)
+        {
+            if (richTextBox != null)
+            {
+                Initialize(richTextBox);
+            }
+            else
+            {
+                MessageBox.Show("RichTextBox is not initialized for AutoSave.");
+            }
+        }
+
+        public void DisableAutoSave()
+        {
+            StopAutoSave();
+        }
+
+        public string RecoverAutoSavedText()
+        {
+            if (File.Exists(AutoSavePath))
+            {
+                return File.ReadAllText(AutoSavePath);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public string AutoSavePath => _autoSavePath;

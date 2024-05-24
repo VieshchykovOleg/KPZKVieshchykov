@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.Diagnostics;
 using Microsoft.SqlServer.Server;
 using NotepadLibrary;
+using NotepadLibrary.AutoSaveObserver;
 
 namespace Notepad
 {
@@ -16,6 +17,7 @@ namespace Notepad
         private AppearanceManager _appearanceManager;
         private CommandManager _commandManager;
         private AutoSaveManager _autoSaveManager;
+        private TextSearchManager _textSearchManager;
 
         private string _previousText;
 
@@ -24,7 +26,9 @@ namespace Notepad
             InitializeComponent();
             InitializeManagers();
             _autoSaveManager = AutoSaveManager.Instance;
-            _autoSaveManager.Initialize(richTextBox1); 
+            _autoSaveManager.Initialize(richTextBox1);
+
+            _textSearchManager = new TextSearchManager(richTextBox1);
         }
 
         private void InitializeManagers()
@@ -134,41 +138,22 @@ namespace Notepad
 
         private void ReplaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string searchText = Microsoft.VisualBasic.Interaction.InputBox("   :", "");
-            string replaceText = Microsoft.VisualBasic.Interaction.InputBox("  :", "");
-
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                _textEditor.ReplaceText(searchText, replaceText);
-            }
-
+            _textSearchManager.Replace(); // Виклик методу Replace у TextSearchManager
         }
 
         private void FindToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string searchText = Microsoft.VisualBasic.Interaction.InputBox("Введіть текст для пошуку:", "Пошук");
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                _textEditor?.Search(searchText);
-            }
+            _textSearchManager.Find(); // Виклик методу Find у TextSearchManager
         }
 
         private void FindNextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string searchText = Microsoft.VisualBasic.Interaction.InputBox("Введіть текст для пошуку наступного збігу:", "Пошук наступного");
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                _textEditor?.SearchNext(searchText);
-            }
+            _textSearchManager.FindNext(); // Виклик методу FindNext у TextSearchManager
         }
 
         private void FindPreviousToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string searchText = Microsoft.VisualBasic.Interaction.InputBox("Введіть текст для пошуку попереднього збігу:", "Пошук попереднього");
-            if (!string.IsNullOrEmpty(searchText))
-            {
-                _textEditor?.SearchPrevious(searchText);
-            }
+            _textSearchManager.FindPrevious(); // Виклик методу FindPrevious у TextSearchManager
         }
 
         private void DateTimeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,11 +161,6 @@ namespace Notepad
             _textEditor.InsertDateTime();
         }
         // Використання класу Format
-
-        private void GoToToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FontToolStripMenuItem_Click(object sender, EventArgs e)
         {
