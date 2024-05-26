@@ -21,5 +21,10 @@ namespace Notepad
         {
 
         }
+
+        private void ForProgram_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

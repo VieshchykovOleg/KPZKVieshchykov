@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace NotepadLibrary
+namespace NotepadLibrary.ToolStripMenuItems
 {
     public class TextEditor
     {

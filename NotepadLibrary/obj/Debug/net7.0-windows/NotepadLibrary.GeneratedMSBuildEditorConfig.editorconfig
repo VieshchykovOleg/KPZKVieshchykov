@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NotepadLibrary
-build_property.ProjectDir = E:\2_cyrs\2semestr\Lab06\Note\Notepad\NotepadLibrary\
+build_property.ProjectDir = D:\2 курс\Конструювання ПЗ\KPZKVieshchykov\NotepadLibrary\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

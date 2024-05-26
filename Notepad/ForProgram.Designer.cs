@@ -37,9 +37,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(308, 9);
+            label1.Location = new Point(270, 7);
             label1.Name = "label1";
-            label1.Size = new Size(192, 38);
+            label1.Size = new Size(147, 30);
             label1.TabIndex = 1;
             label1.Text = "Мій блокнот";
             // 
@@ -47,9 +47,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(-5, 61);
+            label2.Location = new Point(-4, 46);
             label2.Name = "label2";
-            label2.Size = new Size(811, 196);
+            label2.Size = new Size(646, 147);
             label2.TabIndex = 3;
             label2.Text = "\r\nАвтором цього блокноту є  Вєщиков Олег Миколайович, студент спеціальності ІПЗ.\r\nЦей блокнот розроблено для виконання 6 лабораторної з КПЗ.\r\n\r\n\r\n\r\n\r\n";
             label2.Click += label2_Click;
@@ -58,20 +58,21 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label3.Location = new Point(84, 257);
+            label3.Location = new Point(74, 193);
             label3.Name = "label3";
-            label3.Size = new Size(635, 41);
+            label3.Size = new Size(509, 32);
             label3.TabIndex = 4;
             label3.Text = "Надіюсь вам сподобався мій блокнот!!!";
             // 
             // ForProgram
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "ForProgram";
             Text = "ForProgram";
             ResumeLayout(false);
